@@ -24,6 +24,26 @@ sub BUILD {
   $self->{full_arg0} = $arg0;
 }
 
+# Attribute defaults don't make it into the $opt hash, so we add them
+# here.
+before execute_command => sub {
+    my ($self, $cmd, $opt, @args) = @_;
+
+    if ($cmd->can('_compute_getopt_attrs')) {
+        ### Adding option defaults...
+      ATTR:
+        for my $attr ( $cmd->_compute_getopt_attrs ) {
+            my $attr_name = $attr->name;
+            next ATTR if $attr_name eq 'help_flag';
+            my $reader = $attr->get_read_method;
+            my $attr_value = $cmd->$reader();
+            ### Attribute: {$attr_name, $attr_value}
+            $opt->{$attr_name} = $attr_value;
+        }
+
+    }
+};
+
 our $VERSION = "0.06";
 
 __PACKAGE__;
@@ -72,13 +92,13 @@ See L<App::Cmd/SYNOPSIS>.
         my ( $self, $opt, $args ) = @_;
 
         # you may ignore $opt, it's in the attributes anyway
-        
+
         my $result = $self->blortex ? blortex() : blort();
 
         recheck($result) if $self->recheck;
 
         print $result;
-    } 
+    }
 
 =head1 DESCRIPTION
 
