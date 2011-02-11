@@ -44,7 +44,7 @@ before execute_command => sub {
     }
 };
 
-our $VERSION = "0.06";
+our $VERSION = "0.07";
 
 __PACKAGE__;
 

@@ -1,3 +1,7 @@
+0.07
+    - Add MooseX::App::Cmd::Simple which extends App::Cmd::Simple (Ryan)
+    - Ensure that $opt hash is synchronized with attribute values (Ryan)
+
 0.06
     - various fixes for upstream version of App::Cmd (vovkasm & brunov)
 
