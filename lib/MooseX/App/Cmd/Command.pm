@@ -33,9 +33,9 @@ sub _process_args {
         local @ARGV = @ARGV;
 
         my $configfile;
-        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( pass_through
- ) ] );
-        $opt_parser->getoptions( "configfile=s" => \$configfile );        if(!defined $configfile) {
+        my $opt_parser = Getopt::Long::Parser->new( config => [ qw( pass_through ) ] );
+        $opt_parser->getoptions( "configfile=s" => \$configfile );
+        if(!defined $configfile) {
             my $cfmeta = $class->meta->find_attribute_by_name('configfile');
             $configfile = $cfmeta->default if $cfmeta->has_default;
         }
