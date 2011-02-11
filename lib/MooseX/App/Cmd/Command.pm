@@ -3,8 +3,6 @@
 package MooseX::App::Cmd::Command;
 use Moose;
 
-with qw/MooseX::Getopt/;
-
 extends qw(Moose::Object App::Cmd::Command);
 
 with qw(MooseX::Getopt);
