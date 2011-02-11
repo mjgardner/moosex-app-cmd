@@ -3,6 +3,7 @@
 package MooseX::App::Cmd;
 use File::Basename ();
 use Moose;
+use MooseX::NonMoose;
 
 extends qw(Moose::Object App::Cmd);
 

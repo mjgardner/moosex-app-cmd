@@ -2,6 +2,7 @@
 
 package MooseX::App::Cmd::Command;
 use Moose;
+use MooseX::NonMoose;
 
 extends qw(Moose::Object App::Cmd::Command);
 
