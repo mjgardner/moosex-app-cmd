@@ -56,6 +56,10 @@ __END__
 
 MooseX::App::Cmd - Mashes up L<MooseX::Getopt> and L<App::Cmd>.
 
+=head1 VERSION
+
+Version 0.07
+
 =head1 SYNOPSIS
 
 See L<App::Cmd/SYNOPSIS>.
