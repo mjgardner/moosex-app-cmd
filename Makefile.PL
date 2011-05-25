@@ -16,6 +16,7 @@ WriteMakefile(
         'Moose'                     => 0.86,
         'MooseX::Getopt'            => "0.18",
         'Getopt::Long::Descriptive' => 0,
+        'SUPER'                     => 0,
     },
 );
 
