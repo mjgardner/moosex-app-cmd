@@ -19,8 +19,7 @@ has 'moo' => (
     documentation => "required option field",
 );
 
-has '+configfile' =>
-    ( default => sub {'t/lib/Test/ConfigFromFile/config.yaml'}, );
+sub _get_default_configfile { 't/lib/Test/ConfigFromFile/config.yaml' }
 
 sub execute {
     my ( $self, $opt, $arg ) = @_;

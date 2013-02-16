@@ -52,6 +52,6 @@ my $cmd = Test::ConfigFromFile->new;
     like(
         $@,
         qr/ghosts go moo1 moo2 moo3/,
-        'default configfile() takes a sub()',
+        'default configfile read',
     );
 }
